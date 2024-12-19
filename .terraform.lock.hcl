@@ -1,0 +1,24 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/akamai/akamai" {
+  version     = "6.4.0"
+  constraints = ">= 6.3.0"
+  hashes = [
+    "h1:FYlfyCmNrfUY5h505QCUlK4IahO3yXJNpsI9zz1WwJE=",
+    "zh:0e6f109fe9a67cd72e9c4f274335d031a2f2e865b3b7042c35970bc702f54e16",
+    "zh:1ceed575db74c5ddb5526a817b07aeb0f40d0f0191b9aa7f8d964e05c8e45661",
+    "zh:29200dd79d396462cf820c3ea306d5f06cd09fe9ebab651184c4f8f5403ddff9",
+    "zh:3db65adcacfbc0f45d270713346cbeff258709651218b9da5f1248820933281a",
+    "zh:4a9b97981fa782760127328c06360e09feb5f99245ad48c979011b30736097c7",
+    "zh:4ae2bc9729f39b80fca4c9f8902c5afef9c648b9809244e789f43b3bee5909bb",
+    "zh:5a312e5eb6a556ecb408798b4bd41374fd0d68a61207939051b213b1adbc6176",
+    "zh:74ddb1d6c45d921ab8ac101b00ebe68ada8af22c67d8cdb3cf94889488047a91",
+    "zh:759b009d6c2f88a71c520cece0293ca3b2523903665b2c7dbb8ad3e5d9a4827b",
+    "zh:7f9f5442f22dd083d3c3e9a09b303eac242f23f48ac07ae5ea582343d06b7874",
+    "zh:890df766e9b839623b1f0437355032a3c006226a6c200cd911e15ee1a9014e9f",
+    "zh:96c5178444817e8f6ce450729575ce4227521bd9a327b33a6b4e94c54c602397",
+    "zh:d2b204835329f341e1b04e6d91094004e50a6985f20c056156ae50743281529b",
+    "zh:d62d4502d96d6c27b0f019f38e2ee4c880df53da10502e39e9e0bd775ef28631",
+  ]
+}
