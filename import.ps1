@@ -1,5 +1,0 @@
-terraform init
-terraform import akamai_edge_hostname.virajdesai1-edgekey-net ehn_5402216,ctr_1-1NC95D,grp_241797
-terraform import akamai_property.Viraj_Master_Lab_2023 prp_953041,ctr_1-1NC95D,grp_241797,LATEST
-terraform import akamai_property_activation.Viraj_Master_Lab_2023-staging prp_953041:STAGING
-terraform import akamai_property_activation.Viraj_Master_Lab_2023-production prp_953041:PRODUCTION

@@ -2,7 +2,9 @@ data "akamai_property_hostnames" "tf_demo_hostnames" {
   contract_id = var.contract_id
   group_id    = var.group_id
   property_id = var.property_id
+  depends_on = [akamai_property.property_name]
 }
+
 # resource "akamai_dns_zone" "virajterra_gsslab_com" {
 #   contract       = var.contract_id
 #   zone           = var.dns_zone
@@ -12,12 +14,12 @@ data "akamai_property_hostnames" "tf_demo_hostnames" {
 #   sign_and_serve = false
 # }
 # locals {
-#   dns_hostnames_no_zam = [for item in var.dns_hostnames : item if item != var.dns_zone]
+#   property_hostnames_no_zam = [for item in var.property_hostnames : item if item != var.dns_zone]
 # }
 
-# resource "akamai_dns_record" "tf_demo_dns_hostnames" {
+# resource "akamai_dns_record" "tf_demo_property_hostnames" {
 
-#   for_each = toset(local.dns_hostnames_no_zam)
+#   for_each = toset(local.property_hostnames_no_zam)
 
 #   zone       = var.dns_zone
 #   recordtype = "CNAME"
@@ -26,10 +28,10 @@ data "akamai_property_hostnames" "tf_demo_hostnames" {
 #   name       = each.value
 # }
 
-# Create a map with the same length as dns_hostnames, otherwise if the resource creation depends on data.akamai_property_hostnames TF can't know how many resources it needs to create before the apply and fails.
+# Create a map with the same length as property_hostnames, otherwise if the resource creation depends on data.akamai_property_hostnames TF can't know how many resources it needs to create before the apply and fails.
 locals {
   cert_status_map = {
-    for idx, hostname in var.dns_hostnames : hostname => {
+    for idx, hostnames in var.property_hostnames : hostnames => {
       data.akamai_property_hostnames.tf_demo_hostnames.hostnames[idx].cert_status[0].hostname = data.akamai_property_hostnames.tf_demo_hostnames.hostnames[idx].cert_status[0].target
     }
   }
@@ -49,7 +51,7 @@ resource "akamai_dns_record" "tf_demo_dns_validation" {
 # resource "akamai_dns_record" "dv_cname" {
 
 #   # loop through each item in our known hostnames set
-#   for_each = var.dns_hostnames
+#   for_each = var.property_hostnames
 
 #   # get the key or value, same in this instance 
 #   zone = var.dns_zone

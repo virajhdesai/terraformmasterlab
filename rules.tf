@@ -1,5 +1,5 @@
 
-data "akamai_property_rules_builder" "Viraj_Master_Lab_2025_rule_default" {
+data "akamai_property_rules_builder" "property_name_rule_default" {
   rules_v2024_01_09 {
     name      = "default"
     is_secure = true
@@ -139,15 +139,15 @@ EOT
       }
     }
     children = [
-      data.akamai_property_rules_builder.Viraj_Master_Lab_2025_rule_-content--.json,
-      data.akamai_property_rules_builder.Viraj_Master_Lab_2025_rule_break_connection.json,
-      data.akamai_property_rules_builder.Viraj_Master_Lab_2025_rule_reference_error.json,
-      data.akamai_property_rules_builder.Viraj_Master_Lab_2025_rule_caching.json,
+      data.akamai_property_rules_builder.property_name_rule_-content--.json,
+      data.akamai_property_rules_builder.property_name_rule_break_connection.json,
+      data.akamai_property_rules_builder.property_name_rule_reference_error.json,
+      data.akamai_property_rules_builder.property_name_rule_caching.json,
     ]
   }
 }
 
-data "akamai_property_rules_builder" "Viraj_Master_Lab_2025_rule_-content--" {
+data "akamai_property_rules_builder" "property_name_rule_-content--" {
   rules_v2024_01_09 {
     name                  = "/content/*"
     criteria_must_satisfy = "all"
@@ -187,7 +187,7 @@ data "akamai_property_rules_builder" "Viraj_Master_Lab_2025_rule_-content--" {
   }
 }
 
-data "akamai_property_rules_builder" "Viraj_Master_Lab_2025_rule_break_connection" {
+data "akamai_property_rules_builder" "property_name_rule_break_connection" {
   rules_v2024_01_09 {
     name                  = "Break connection"
     criteria_must_satisfy = "all"
@@ -209,7 +209,7 @@ data "akamai_property_rules_builder" "Viraj_Master_Lab_2025_rule_break_connectio
   }
 }
 
-data "akamai_property_rules_builder" "Viraj_Master_Lab_2025_rule_reference_error" {
+data "akamai_property_rules_builder" "property_name_rule_reference_error" {
   rules_v2024_01_09 {
     name                  = "Reference Error"
     criteria_must_satisfy = "any"
@@ -230,7 +230,7 @@ data "akamai_property_rules_builder" "Viraj_Master_Lab_2025_rule_reference_error
   }
 }
 
-data "akamai_property_rules_builder" "Viraj_Master_Lab_2025_rule_caching" {
+data "akamai_property_rules_builder" "property_name_rule_caching" {
   rules_v2024_01_09 {
     name                  = "Caching"
     criteria_must_satisfy = "all"
@@ -247,12 +247,12 @@ data "akamai_property_rules_builder" "Viraj_Master_Lab_2025_rule_caching" {
       }
     }
     children = [
-      data.akamai_property_rules_builder.Viraj_Master_Lab_2025_rule_200_ok.json,
+      data.akamai_property_rules_builder.property_name_rule_200_ok.json,
     ]
   }
 }
 
-data "akamai_property_rules_builder" "Viraj_Master_Lab_2025_rule_200_ok" {
+data "akamai_property_rules_builder" "property_name_rule_200_ok" {
   rules_v2024_01_09 {
     name                  = "200OK"
     criteria_must_satisfy = "all"
